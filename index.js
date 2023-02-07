@@ -3,7 +3,8 @@
 function mindGame(num){
     const checkInput=typeof(num);
     if(checkInput!=='number'){
-        return 'please input a number';
+        const err='please input a number';
+        return err;
     }else{
         let multiplay  =  num * 3;
         let sum        =  multiplay + 10;
@@ -19,7 +20,8 @@ function mindGame(num){
 function evenOdd(data){
     const checkData=typeof(data);
     if(checkData!=='string'){
-        return 'Input must be string';
+        const err='Input must be string';
+        return err;
     }else{
         const strCount=data.length;
         if(strCount%2===0){
@@ -36,7 +38,8 @@ function evenOdd(data){
 function isLGSeven(num){
     const checkInput=typeof(num);
     if(checkInput!=='number'){
-        return 'Input should be a valid number';
+        const err='Input should be a valid number';
+        return err;
     }else{
         const differenceValue=num-7;
         if(differenceValue<7){
@@ -53,7 +56,8 @@ function isLGSeven(num){
 function findingBadData(numbers){
     const checkInput=Array.isArray(numbers);
     if(checkInput===false){
-        return 'Input should be an array'; 
+        const err='Input should be an array';
+        return err;
     }else{
         let badData=[];
         for(i=0;i<numbers.length;i++){
@@ -67,3 +71,28 @@ function findingBadData(numbers){
     
 }
 */
+
+//function gemsToDiamond() convert your gems into diamond which received three numbers as parameter.  The first, second & third parameter will multiply with respectively 21, 32 & 43. After summesion of previous multiply results compair with double of 1000 that means 2000. If the Total result is greater than 2000 then substruct 2000 from the total result. Return the substruction result which is you actual number of diamond. If the total result is less than double of 1000, return the total result.
+
+function gemsToDiamond(num1, num2, num3){
+    const checkInput1=typeof(num1);
+    const checkInput2=typeof(num2);
+    const checkInput3=typeof(num3);
+
+    if(checkInput1!=='number' || checkInput2!=='number' || checkInput3!=='number'){ 
+        const err='All input must be number';
+        return err;
+    }else{
+      const firstFriendGemsPower =  num1*21;
+      const secondFriendGemsPower =  num2*32;
+      const thirdFriendGemsPower =  num3*43;
+      const totalGemPower=firstFriendGemsPower+secondFriendGemsPower+thirdFriendGemsPower;
+      if(totalGemPower>1000*2){
+        const ourDiamond=totalGemPower-2000;
+        return ourDiamond;
+      }else{
+        return totalGemPower;
+      }
+    }
+}
+
